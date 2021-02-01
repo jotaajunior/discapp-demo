@@ -4,4 +4,4 @@ import { Application } from 'discapp'
 
 import { config } from './config'
 
-new Application().withConfig(config).bootstrap().ignite()
+export const app = new Application(config).start()
