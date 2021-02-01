@@ -1,17 +1,11 @@
-import { Command, BaseCommand, Argument, Author } from 'discapp'
-import { User } from 'discord.js'
+import { Command, BaseCommand, Argument } from 'discapp'
 
 @Command('greet')
 export default class GreetCommand extends BaseCommand {
-  @Argument({
-    isRequired: false,
-  })
-  public name!: string
-
-  @Author()
-  public author!: User
+  @Argument()
+  public name: string
 
   public execute() {
-    return `Hello, ${this.name ? this.name : `<@${this.author.id}>`}`
+    return `Hello, ${this.name}`
   }
 }
